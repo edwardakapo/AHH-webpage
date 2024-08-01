@@ -11,41 +11,35 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-white dark:bg-black">
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
+    :root {
+        /* Default text color */
+        --text-color: #333;
+    }
+
+    :root.dark {
+        /* Dark mode text color */
+        --text-color: #fff;
+    }
+
+    body {
+        color: var(--text-color);
+		transition: color 0.3s ease; /* Smooth transition for text color */
+        background-color: var(--bg-color);
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+		scroll-behavior: smooth;
 	}
 </style>

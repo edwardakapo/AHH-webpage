@@ -1,0 +1,43 @@
+---
+import NightModeButton from "./ui/NightModeButton.astro"
+import Logo from "./ui/Logo.astro"
+import Dropdownbtn from "@/components/ui/Dropdownbtn"
+import DropDownButton from "./ui/DropDownButton.astro"
+---
+
+<header class=" mx-10 laptop:mx-7 tablet:mx-6 mobile:mx-4 my-6 tablet:my-5 mobile:my-4 ">
+    <nav class="w-full">
+        <div class="flex items-center justify-between">
+            <div class="desktop:w-[230px] laptop:w-1/6 laptop:min-w-[170px] laptop:max-w-[185px] flex ">
+              <Logo />
+            </div>
+        
+            <div id="navigation" class="md-max:hidden flex gap-x-12 laptop:gap-x-10">
+                <a href="#Specialties"><p class="text-base laptop:text-sm tracking-wide">Specialties</p></a>
+                <a href="#About"><p class="text-base laptop:text-sm tracking-wide">About</p></a>
+                <a href="#Services"><p class="text-base laptop:text-sm tracking-wide">Services</p></a>
+                <a href="#StayWithUs"><p class="text-base laptop:text-sm tracking-wide">Stay With Us</p></a>
+            </div>
+    
+            <div id="big-header-btn" class="flex items-center w-[80px] desktop:w-[230px] laptop:w-1/6 laptop:min-w-[170px] laptop:max-w-[185px] tablet:w-[110px] justify-between">
+                <NightModeButton/>
+                
+                <div>
+                    <a href=#Contact class=" md-max:hidden px-9 laptop:px-6 py-5 laptop:py-4 rounded-md text-[13px] laptop:text-[11px] tracking-widest bg-button text-white">
+                        BOOK NOW
+                    </a>
+                    <div class="md-min:hidden">
+                        <DropDownButton />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dropdownmenu" class="text-center pt-3 hidden">
+            <a href="#Specialties"><p class="text-lg tracking-wider py-3 border-black dark:border-white border-b">Specialties</p></a>
+            <a href="#About"><p class="text-lg tracking-wider py-3 border-black dark:border-white border-b">About</p></a>
+            <a href="#Services"><p class="text-lg tracking-wider py-3 border-black dark:border-white border-b">Services</p></a>
+            <a href="#StayWithUs"><p class="text-lg tracking-wider py-3 border-black dark:border-white border-b">Stay With Us</p></a>
+        </div>
+    </nav>
+</header>

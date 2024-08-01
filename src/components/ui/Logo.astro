@@ -1,0 +1,20 @@
+---
+interface Props {
+    color?: string; // Make color optional
+    mobileSize?: string;
+}
+
+const defaultProps: Props = {
+    color: "black", // Default color value
+    mobileSize: "yes",
+}
+
+const link = "https://cal.com/"
+const { color = defaultProps.color, mobileSize = defaultProps.mobileSize} = Astro.props
+---
+    <a href={link}>
+        <h1 class={`text-[40px] laptop:text-[34px] ${mobileSize === defaultProps.mobileSize ? 'mobile:text-[33px] mobile:leading-5' : ''} leading-6 laptop:leading-5  tracking-wide font-FatFace text-center ${color === defaultProps.color ? 'text-logo dark:text-white' : color}`}>
+            Anorak <br> 
+            <span class={`text-[20px] laptop:text-[17px] ${mobileSize === defaultProps.mobileSize ? 'mobile:text-[17px]' : ''}`}>Postnatal Care</span>
+        </h1>
+    </a>
