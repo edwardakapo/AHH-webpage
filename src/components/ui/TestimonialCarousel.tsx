@@ -74,7 +74,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             {testimonials.map((x) => (
               <div className="embla__slide" key={x.img}>
                   <div className="embla__slide__quote">
-                      <div className="flex mobile-md:flex-col w-fit gap-x-12 items-center">
+                      <div className="flex mobile-md:flex-col mobile-md:gap-y-10 w-fit gap-x-12 items-center">
                           <img className="w-[300px] desktop:w-[350px] h-fit" src={x.img} alt="image of a woman holding up her baby"/>
                           <div id="quote" className="w-[250px] h-fit flex flex-col gap-y-5">
                               <div>
