@@ -1,0 +1,15 @@
+---
+
+import HomestayCarousel from "@/components/ui/HomestayCarousel"
+import type { EmblaOptionsType } from 'embla-carousel'
+// import '@/styles/base.module.css'
+// import {TestimonialCarousel} from './ui/TestimonialCarousel'
+const OPTIONS: EmblaOptionsType = {}
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+---
+
+
+<section id="Homestay">
+    <HomestayCarousel slides={SLIDES} options={OPTIONS} client:load/>
+</section>

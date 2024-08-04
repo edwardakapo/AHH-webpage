@@ -1,0 +1,45 @@
+---
+// import TestimonialCarousel from "./ui/TestimonialCarousel"
+import EmblaCarousel from '@/components/ui/TestimonialCarousel'
+import type { EmblaOptionsType } from 'embla-carousel'
+// import '@/styles/base.module.css'
+// import {TestimonialCarousel} from './ui/TestimonialCarousel'
+const OPTIONS: EmblaOptionsType = {}
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
+
+const QUOTES = [ 
+    { 
+        img : "https://boramcare.com/wp-content/uploads/slider/cache/6d87eaaaccd4d76b9cbcc1ed24b15f18/boram-care-kellen7-scaled.webp", 
+        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa risus, sodales ac tristique nec, interdum at sem. Vivamus ullamcorper aliquet mattis.",
+        name : "suzy.q",
+    },
+    { 
+        img : "https://boramcare.com/wp-content/uploads/slider/cache/a6395cfb5ff35a3536e1a4fbc8ce2e5a/boram-care-jia-26-scaled.webp", 
+        quote : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas massa risus, sodales ac tristique nec, interdum at sem. Vivamus ullamcorper aliquet mattis.",
+        name : "mary.jane",
+
+    }
+]
+---
+
+
+<section  id="Testimonials" class=" w-fit m-auto justify-center items-center py-10">
+    <div class="flex justify-between w-[1200px] laptop-md:w-[1000px] tablet-md:w-fit tablet-md:flex-col tablet-md:gap-10 mobile-md:flex-col mobile-md:gap-10 mobile-md:w-fit ">
+        <div class="w-[278px] tablet-md:ml-12 mobile-md:ml-5">
+            <h2 class="text-lg">
+                Testimonials
+            </h2>
+            <h1 class="text-[40px] leading-tight font-bold pb-5">
+                Mamas <br> <span class="italic"> Love </span> Anorak
+            </h1>
+            <p>
+                Discover why new mothers trust Anorak. Hear from our community about their experiences and the  exceptional support they received.
+            </p>
+        </div>
+        <EmblaCarousel testimonials={QUOTES} options={OPTIONS} client:load/>
+
+    </div>
+
+
+</section>

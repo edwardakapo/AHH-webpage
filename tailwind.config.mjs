@@ -6,8 +6,13 @@ module.exports = {
   theme: {
     screens:{
 			'mobile' : { 'max' : '600px'},
+			'mobile-md' : { 'max' : '760px'},
 			'tablet' : { 'min' : '601px', 'max' : '859px'},
+      'tablet-sm' : {'min' : '601px', 'max' : '760px'},
+      'tablet-md' : {'min' : '761px', 'max' : '1023px'},
 			'laptop' : { 'min' : '860px', 'max' : '1279px'},
+      'laptop-sm' : { 'min' : '860px', 'max' : '1023px'},
+      'laptop-md' : {'min': '1024px', 'max' : '1279px'},
 			'desktop' : { 'min' : '1280px'},
 
 			'md-min': '860px',
@@ -25,7 +30,9 @@ module.exports = {
     },
     extend: {
       fontFamily : {
-        "FatFace": [ 'Abril Fatface', 'sans-serif'],
+        FatFace : [ 'Abril Fatface' , 'serif'],
+        NotoSans : [' Noto Sans', 'sans-serif'],
+        Noticia : [' Noticia Text', 'serif']
       },
       colors: {
         'button' : '#3B4323',

@@ -1,0 +1,218 @@
+.embla__button__container {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.embla {
+  max-width: var(--slide-size);
+  /* margin: auto; */
+  --slide-height: fit-content;
+  --slide-spacing: 0rem;
+  --slide-size: 650px;
+  /* position: relative; */
+}
+.embla__viewport {
+  overflow: hidden;
+  height: var(--slide-height);
+  /* border-radius: 1rem; */
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  min-width: 0;
+  min-height: var(--slide-height);
+  padding-left: var(--slide-spacing);
+  /* border: solid 1px #000000; */
+  /* box-shadow: #000000; */
+}
+
+.embla__slide__quote {
+  /* box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast); */
+  /* box-shadow: inset 0 0 0 0.2rem #000000; */
+
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--slide-size);
+  height: var(--slide-height);
+  border-radius: 1rem;
+}
+.embla__controls {
+  /* display: grid; */
+  /* grid-template-columns: auto 1fr; */
+  /* justify-content: space-between; */
+  /* gap: 1.2rem; */
+  margin-top: 1.5rem;
+}
+/* .embla__buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+} */
+.embla__buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  right: 0;
+  /* padding: 0rem 0rem 0rem 0rem; */
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.embla__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  /* background-color: #ffffff; */
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  /* box-shadow: inset 0 0 0 0.1rem var(--detail-medium-contrast); */
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--dots-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease; /* Add smooth easing transition */
+
+}
+/* .embla__button {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0 0 0 0.1rem var(--detail-medium-contrast);
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+} 
+*/
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+}
+.embla__button:hover {
+  box-shadow: inset 0 0 0 0.1rem var(--detail-medium-contrast), 0 0 0.2rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.1); /* Increase size */
+}
+.embla__button__svg {
+  width: 50%;
+  height: 50%;
+}
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  /* position: absolute; */
+  /* bottom: 1rem; */
+  width: 100%;
+}
+.embla__dot {
+  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1;
+  padding: 0;
+  margin: 0 0.15rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.embla__dot:after {
+  box-shadow: inset 0 0 0 0.15rem var(--detail-medium-contrast);
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  content: '';
+}
+.embla__dot:hover {
+  box-shadow: inset 0 0 0 0.4rem var(--detail-medium-contrast);
+
+}
+.embla__dot--selected:after {
+  box-shadow: inset 0 0 0 0.4rem var(--dots-color);
+}
+
+/* Media query to hide embla__buttons at 860px and below for tablets and phones*/
+@media screen and (max-width: 1023px) {
+  .embla__buttons {
+      display: none;
+  }
+}
+
+/* Media query for laptops*/
+@media screen and  (min-width : 1024px) and (max-width : 1279px){
+  .embla__button__container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+/* Media query for larger tablets*/
+
+@media screen and  (min-width : 761px) and (max-width : 1023px){
+  .embla__button__container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}
+
+@media screen and (max-width : 760px){
+  .embla__button__container {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+}

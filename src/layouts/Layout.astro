@@ -14,9 +14,17 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<!-- favicon links -->
+		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome-192x192.png" />
+		<link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png" />
+		<link rel="manifest" href="icons/site.webmanifest" />
 	</head>
 	<body class="bg-white dark:bg-black">
 		<slot />
@@ -26,6 +34,15 @@ const { title } = Astro.props;
     :root {
         /* Default text color */
         --text-color: #333;
+
+		/* Embla CSS */
+		--text-body: rgb(54, 49, 61);
+		--text-high-contrast: rgb(49, 49, 49);
+		--text-medium-contrast: rgb(99, 94, 105);
+		--detail-high-contrast: rgb(192, 192, 192);
+		--detail-medium-contrast: rgb(234, 234, 234);
+		--detail-low-contrast: rgb(240, 240, 242);
+		--text-high-contrast-rgb-value: 49, 49, 49;
     }
 
     :root.dark {
@@ -41,5 +58,7 @@ const { title } = Astro.props;
     }
 	html {
 		scroll-behavior: smooth;
+		box-sizing: border-box;
+
 	}
 </style>

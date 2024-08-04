@@ -29,7 +29,9 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
     --button-color: #000000;
+    --dots-color : #000000;
   }
 
   .dark {
@@ -58,7 +60,9 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
 
-    --button-color: #ffffff;
+    --button-color: #ffffff;    
+    --dots-color : #ffffff;
+
 
   }
 }
@@ -69,5 +73,14 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  p{
+    @apply font-NotoSans
+  }
+  h1{
+    @apply font-Noticia
+  }
+  h2{
+    @apply font-Noticia
   }
 }

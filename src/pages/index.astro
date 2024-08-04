@@ -1,16 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '@/styles/globals.css'
-import Card from '../components/Card.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MiddleSection from "../components/MiddleSection.astro"
+import TestimonialsSection from '@/components/TestimonialsSection.astro';
+import HomestaySection from '@/components/HomestaySection.astro';
+import { Home } from 'lucide-react';
 ---
 
 <Layout title="Anorak Postnatal Care | Nurturing Mothers and Babies">
 	<Header/>
 	<main>
 		<MiddleSection/>
+		<TestimonialsSection />
+		<HomestaySection />
 	</main>
 	<Footer/>
 </Layout>
+
+
