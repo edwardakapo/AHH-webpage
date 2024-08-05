@@ -215,4 +215,8 @@
     align-items: center;
     position: relative;
   }
+  .embla {
+    --slide-size: 350px;
+    /* position: relative; */
+  }
 }
