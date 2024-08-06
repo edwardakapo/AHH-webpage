@@ -4,7 +4,7 @@ import HomestayCarousel from "@/components/ui/HomestayCarousel"
 import type { EmblaOptionsType } from 'embla-carousel'
 // import '@/styles/base.module.css'
 // import {TestimonialCarousel} from './ui/TestimonialCarousel'
-const OPTIONS: EmblaOptionsType = { loop : true }
+const OPTIONS: EmblaOptionsType = { loop : true , dragFree : true}
 const IMAGES = [
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/APC-House1/Outside_House.jpg",
     "https://edwardakaposfirstawsbucket.s3.amazonaws.com/APC-House1/Kitchen.jpg",
@@ -18,8 +18,8 @@ const IMAGES = [
 ---
 
 
-<section id="Homestay" class="mx-auto max-w-[1200px]">
-    <h1 class="w-fit mx-auto text-4xl md-max:text-center md-max:text-4xl font-semibold pb-10">
+<section id="StayWithUs" class="mx-auto max-w-[1200px]">
+    <h1 class="w-fit mx-auto text-4xl md-max:text-center md-max:text-4xl font-semibold pb-12">
         Nurturing Postnatal Care in Guelph and Beyond
     </h1>
 
@@ -33,7 +33,7 @@ const IMAGES = [
     </div>
     <div class="w-fit relative mx-auto mb-10 pb-5 mobile:pb-1">
         <HomestayCarousel images={IMAGES} options={OPTIONS} client:visible/>
-        <p class="absolute mt-1 tablet:text-sm mobile:text-xs">* The Homestay service is only available in Guelph</p>
+        <p class="absolute mt-1 ml-2 tablet:text-sm mobile:text-xs">*The Homestay service is only available in Guelph</p>
     </div>
     <p class="mx-auto mobile-md:px-2 pb-10">
         <span class="hidden mobile:block ">  Our caregivers ensure you can bond with your baby while we handle the rest. Perfect for new mothers to rest, heal, and gain confidence in a supportive community.</span>

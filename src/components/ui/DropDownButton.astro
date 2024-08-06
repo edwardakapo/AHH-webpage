@@ -62,14 +62,14 @@ function toggleMenu() {
         if (isOpen) {
           menubar.style.display = "none";
           downArrow.style.display = "block";
-          dropdown.style.display = "block";
-          dropdown.style.height = "auto";
+        //   dropdown.style.display = "block";
+          dropdown.style.height = "225px";
 
         }
         else {
           menubar.style.display = "block";
           downArrow.style.display = "none";
-          dropdown.style.display = "none";
+        //   dropdown.style.display = "none";
           dropdown.style.height = "0";
 
         }
@@ -80,12 +80,12 @@ function toggleMenu() {
  * @param {MouseEvent} event
  */
 // Close the menu if clicked outside
-function handleClickOutside(event : MouseEvent) {
+function handleClick(event : MouseEvent) {
     if (menubar && downArrow && dropdown && toggleBtn) {
-        if (isOpen && !toggleBtn.contains(event.target as Node) && !dropdown.contains(event.target as Node)) {
+        if (isOpen && !toggleBtn.contains(event.target as Node)) {
             isOpen = false;
             dropdown.style.height = "0";
-            dropdown.style.display = "none";
+            // dropdown.style.display = "none";
             menubar.style.display = "block";
             downArrow.style.display = "none";
         }
@@ -93,5 +93,5 @@ function handleClickOutside(event : MouseEvent) {
 }
 
 toggleBtn?.addEventListener("click", toggleMenu);
-document.addEventListener("click", handleClickOutside);
+document.addEventListener("click", handleClick);
 </script>

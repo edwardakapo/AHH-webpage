@@ -9,6 +9,7 @@ import {
 import useEmblaCarousel from 'embla-carousel-react'
 import Fade from 'embla-carousel-fade'
 import '@/styles/testimonialCarousel.css'
+import Autoplay from 'embla-carousel-autoplay'
 // import '@/styles/base.module.css'
 interface Testimonial  {
     img : string;
@@ -22,47 +23,8 @@ type PropType = {
 
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { testimonials, options } = props
-  const  [plugins, setPlugins] = useState<any[]>([]);
 
-  const debounce = <T extends (...args: any[]) => void>(func: T, wait: number) => {
-    let timeout: ReturnType<typeof setTimeout> | undefined;
-    return (...args: Parameters<T>) => {
-      const later = () => {
-        if (timeout) {
-          clearTimeout(timeout);
-        }
-        func(...args);
-      };
-  
-      if (timeout) {
-        clearTimeout(timeout);
-      }
-      timeout = setTimeout(later, wait);
-    };
-  };
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1024) {
-        setPlugins([])
-      }
-      else {
-        setPlugins([Fade()])
-      }
-    }
-
-    handleResize();
-
-    const debouncedHandleResize = debounce(handleResize, 100);
-    window.addEventListener('resize',debouncedHandleResize)
-
-    return () => {
-      window.removeEventListener('resize', debouncedHandleResize);
-    };
-
-  }, [])
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins)
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade({breakpoints : {'(max-width: 1024px)' : {active : true}}}), Autoplay({delay : 5000})])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi)
