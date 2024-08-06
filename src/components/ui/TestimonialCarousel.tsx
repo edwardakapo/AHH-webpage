@@ -24,7 +24,7 @@ type PropType = {
 const EmblaCarousel: React.FC<PropType> = (props) => {
   const { testimonials, options } = props
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade({breakpoints : {'(max-width: 1024px)' : {active : true}}}), Autoplay({delay : 5000})])
+  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade({breakpoints : {'(max-width: 1023px)' : {active : false}}}), Autoplay({delay : 10000})])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useDotButton(emblaApi)
