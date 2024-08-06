@@ -83,4 +83,7 @@
   h2{
     @apply font-Noticia
   }
+  h3{
+    @apply font-NotoSans
+  }
 }
