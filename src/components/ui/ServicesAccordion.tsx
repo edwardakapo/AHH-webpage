@@ -23,7 +23,7 @@ export default function ServicesAccordion(props : AccordionProps) {
                     <AccordionContent>
                         <ul className="text-lg mobile:text-base md-min:w-[85%] list-disc">
                             {service.text.map((points,index) => (
-                          <li className={`ml-10 ${index != 0 ? 'mt-3' : ''}`}key={index}>
+                          <li className={`ml-8 ${index != 0 ? 'mt-3' : ''}`}key={index}>
                                 {points}
                             </li>
                             ))}
