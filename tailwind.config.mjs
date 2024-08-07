@@ -20,6 +20,8 @@ module.exports = {
 			'md-max': {'max' : '859px' },
 			// => @media (min-width: 860px) { ... }
       'sm-max' : {'max' : '601px'},
+
+      'tb-max' : {'max' : '1023px'},
 		},
     container: {
       center: true,
@@ -93,8 +95,8 @@ module.exports = {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down 0.25s ease-in-out",
+        "accordion-up": "accordion-up 0.25s ease-in-out",
       },
     },
   },

@@ -1,0 +1,132 @@
+---
+import { WhatsappIcon , PhoneIcon , EmailIcon, ArrowIcon } from "./ui/svgs";
+const style = { 
+    width : '30px', height : '30px'
+};
+const mobileStyle ={
+     width : '40px', height : '40px', color : "white"
+};
+import MyForm from "@/components/ui/ContactForm"
+---
+<!-- <div class="">
+    <MyForm  client:visible/>
+</div> -->
+<section id="Contact" class="mx-auto flex justify-between tb-max:block desktop:max-w-[1000px] laptop-md:max-w-[1000px]">
+        <div class="flex flex-col justify-center tb-max:items-center">
+            <div class="max-w-[500px] mb-10">
+                <h1 class="text-[40px] font-bold tb-max:text-center pb-3">
+                    Contact Us
+                </h1>
+                <p class="text-lg tb-max:text-center">
+                    We're here to assist you, get in touch with us to get more information and start your consultation today.
+                </p>
+            </div>
+            <img class=" mb-10 hidden tb-max:block w-[300px] h-[350px] rounded object-cover object-top" src="testimonial-img.jpg"/>
+                <button id="Quote-Btn" class="mb-4 flex justify-between items-center px-9 border w-[250px] h-[65px] bg-button text-white text-sm tracking-widest">
+                    GET A QUOTE
+                    <div id="Arrow-Icon" class="ease-in-out duration-500">
+                        <ArrowIcon style={{width : "24px", height : "24px"}}/>
+                    </div>
+                </button>
+                <div id="Form-container" class="mb-5 h-0 ease-in-out duration-500 overflow-hidden">
+                    <MyForm client:visible/>
+                </div>
+            <div class="hidden tb-max:block w-[320px] mx-auto">
+                <h3 class="text-center font-bold text-xl">
+                    Or
+                </h3>
+                <p class="pt-10 mb-10">
+                    Reach us at any of these contacts, to get more assistance
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-2 tb-max:block">
+                <div class="max-w-[210px] tb-max:max-w-[320px] tb-max:pb-2">
+                    <a class="flex items-center tb-max:gap-8 gap-2 pb-3" href="https://api.whatsapp.com/send?phone=14162704247&text=Hello%20Mrs%20Ireti%2C%20I%20found%20your%20website%20and%20am%20interested%20in%20learning%20more%20about%20Anorak%20Postnatal%20Care%27s%20services.%20Can%20we%20chat%3F" target="_blank">
+                            <div class="tb-max:hidden">
+                                <WhatsappIcon style={style}/>
+                            </div>
+                            <div class="hidden tb-max:block p-1 rounded-xl bg-button">
+                                <WhatsappIcon style={mobileStyle}/>
+                            </div>
+                            <p class=" tb-max:hidden font-semibold text-xl">
+                                WhatsApp
+                            </p>
+                            <p class="hidden tb-max:block">
+                                Available for calls and texts
+                            </p>
+                    </a>
+                    <div class="tb-max:hidden">
+                        <p>
+                            Available from 9am - 9pm EST. Messages will be replied in the nearest hour
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-[210px] tb-max:max-w-[320px] tb-max:pb-2">
+                    <a class="flex items-center tb-max:gap-8 gap-2 pb-3" href="https://api.whatsapp.com/send?phone=14162704247&text=Hello%20Mrs%20Ireti%2C%20I%20found%20your%20website%20and%20am%20interested%20in%20learning%20more%20about%20Anorak%20Postnatal%20Care%27s%20services.%20Can%20we%20chat%3F" target="_blank">
+                        <div class="tb-max:hidden">
+                            <PhoneIcon style={style}/>
+                        </div>
+                        <div class="hidden tb-max:block p-1 rounded-xl bg-button">
+                            <PhoneIcon style={mobileStyle}/>
+                        </div>
+                            <p class="tb-max:hidden font-semibold text-xl">
+                               Phone
+                            </p>
+                            <p class="hidden tb-max:block">
+                                +1 (416) 270-4247
+                            </p>
+                    </a>
+                    <div class="tb-max:hidden">
+                        <p>
+                            Available for calls anytime from 9am - 9pm EST.<br/> +1 (416) 270-4247
+                        </p>
+                    </div>
+                </div>
+                <div class="max-w-[210px] tb-max:max-w-[320px] tb-max:pb-2">
+                    <a class="flex items-center tb-max:gap-8 gap-2 pb-3" href="https://api.whatsapp.com/send?phone=14162704247&text=Hello%20Mrs%20Ireti%2C%20I%20found%20your%20website%20and%20am%20interested%20in%20learning%20more%20about%20Anorak%20Postnatal%20Care%27s%20services.%20Can%20we%20chat%3F" target="_blank">
+                        <div class="tb-max:hidden">
+                            <EmailIcon style={style}/>
+                        </div>
+                        <div class="hidden tb-max:block p-1 rounded-xl bg-button">
+                            <EmailIcon style={mobileStyle}/>
+                        </div>
+                            <p class="tb-max:hidden font-semibold text-xl">
+                               Email
+                            </p>
+                            <p class="hidden tb-max:block">
+                                info@anorakpostnatal.com
+                            </p>
+                    </a>
+                    <div class="tb-max:hidden">
+                        <p>
+                            Emails will be responded to by end of day. <br/> info@anorakpostnatal.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <img class=" tb-max:hidden w-[300px] h-[500px] object-cover object-top" src="testimonial-img.jpg"/>
+</section>
+
+<script>
+    let isOpen = false;
+    const btn = document.getElementById("Quote-Btn");
+    const form = document.getElementById("Form-container");
+    const arrow = document.getElementById("Arrow-Icon");
+    function toggleOpen() {
+        isOpen = !isOpen;
+        if(form && arrow) {
+            if(isOpen) {
+                form.style.height = "400px"
+                form.style.overflow = "auto"
+                arrow.style.transform = "rotate(180deg)"
+            }
+            else {
+                form.style.height = "0"
+                arrow.style.transform = "rotate(0deg)"
+            }
+        }
+    }
+    btn?.addEventListener('click' , toggleOpen)
+</script>
