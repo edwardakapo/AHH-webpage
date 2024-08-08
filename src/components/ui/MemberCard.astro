@@ -1,0 +1,12 @@
+---
+const { image, name, role, text } = Astro.props;
+---
+
+<div class="flex flex-col max-w-[300px] items-center text-center">
+    <img class="rounded-full w-[250px] h-[250px] object-cover mb-4 mobile-md:mb-2 mobile-md:w-[200px] mobile-md:h-[200px]" 
+         src={image ? image : "placeholder_profile_img.jpg"} 
+         alt={name ? `${name}'s profile image` : 'Profile Image'} />
+    <p class="text-lg font-bold">{name}</p>
+    <p class="pb-3">{role}</p>
+    <p>{text}</p>
+</div>

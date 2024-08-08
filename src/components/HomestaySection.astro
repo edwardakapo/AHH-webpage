@@ -18,16 +18,16 @@ const IMAGES = [
 ---
 
 
-<section id="StayWithUs" class="mx-auto max-w-[1200px]">
-    <h1 class="w-fit mx-auto text-4xl md-max:text-center md-max:text-4xl font-semibold pb-12">
+<section id="StayWithUs" class="mx-auto max-w-[1200px] ">
+    <h1 class="w-fit mx-auto text-4xl md-max:text-center mobile-md:text-3xl mobile-md:w-[90%] font-semibold pb-12">
         Nurturing Postnatal Care in Guelph and Beyond
     </h1>
 
-    <div class="desktop:w-[90%] laptop:w-[95%] tablet:w-[95%] mx-auto mobile-md:px-2 pb-10">
+    <div class="desktop:w-[90%] laptop:w-[95%] tablet:w-[95%] mx-auto mobile-md:px-2 mobile-md:w-[90%] pb-10">
         <h3 class="text-2xl font-bold pb-3">
             Homestay in Guelph
         </h3>
-        <p class="text-lg mobile:text-base">
+        <p class="text-lg mobile:text-base ">
             Experience a nurturing environment in our Guelph home, designed for your relaxation and recovery. <span class="mobile:hidden">  Our round-the-clock caregivers ensure you can bond with your baby while we handle the rest. Perfect for new mothers to rest, heal, and gain confidence in a supportive community.</span>
         </p>
     </div>
@@ -35,11 +35,11 @@ const IMAGES = [
         <HomestayCarousel images={IMAGES} options={OPTIONS} client:visible/>
         <p class="absolute mt-1 ml-2 tablet:text-sm mobile:text-xs">*The Homestay service is only available in Guelph</p>
     </div>
-    <p class="mx-auto mobile-md:px-2 pb-10">
-        <span class="hidden mobile:block ">  Our caregivers ensure you can bond with your baby while we handle the rest. Perfect for new mothers to rest, heal, and gain confidence in a supportive community.</span>
-    </p>
+    <!-- <p class="mx-auto mobile-md:px-2 pb-10">
+        <span class="hidden mobile:block "> Perfect for new mothers to rest, heal, and gain confidence in a supportive community.</span>
+    </p> -->
 
-    <div class="flex mobile:flex-col justify-between items-center desktop:w-[90%] laptop:w-[95%] tablet:w-[95%] mobile-md:px-2 mx-auto pb-10">
+    <div class="flex mobile:flex-col justify-between items-center desktop:w-[90%] laptop:w-[95%] tablet:w-[95%] mobile-md:px-2 mobile-md:w-[90%] mx-auto pb-10">
         <div class="w-1/2 mobile:w-full">
             <h3 class="text-2xl font-bold pb-3">
                 Home Visits
@@ -50,6 +50,6 @@ const IMAGES = [
             </p>
         </div>
 
-            <img class="mobile:hidden w-1/4 min-w-[230px] max-h-[220px] object-cover mobile:w-[70%]" src="/map.jpeg"/>
+            <img class="mobile:hidden w-1/4 min-w-[230px] max-h-[220px] object-cover mobile:w-[70%] rounded-xl" src="/map.jpeg"/>
     </div>
 </section>

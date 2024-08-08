@@ -6,14 +6,27 @@ import {
     SelectTrigger,
     SelectValue,
   } from "@/components/ui/select"
+import {Toaster, toast} from 'sonner'
 
 
 
 export default function MyForm() {
     const [name, setName] = useState("");
+    function submitHandler() {
+        // e.preventdefault()
+        const promise = () => new Promise((resolve) => setTimeout(() => resolve({ name: 'Sonner' }), 1500));
 
+        toast.promise(promise, {
+          loading: 'Loading...',
+          success: () => {
+            return "Email Sent, You will get a reply soon, Thank you!";
+          },
+          error: 'Email failed to send, use other contact methods to reach out',
+        });
+    }
     return (
         <form className='flex flex-wrap justify-between w-[550px] mobile-md:w-[250px] gap-y-8 mt-3 '>
+            <Toaster richColors position='bottom-right'/>
             <div className='flex flex-col w-[250px]'>
                 <label className="w-fit mb-3" htmlFor='name'> Name </label> 
                 <input className='border border-black p-2 rounded-sm'
@@ -27,7 +40,6 @@ export default function MyForm() {
                 <input className='border border-black p-2 rounded-sm'
                     id='phone'
                     type="tel"
-                    value={name}
                 />
             </div>
             <div className='flex flex-col w-[250px]'>
@@ -35,7 +47,6 @@ export default function MyForm() {
                 <input className='border border-black p-2 rounded-sm'
                     id='name'
                     type="date"
-                    value={name}
                 />
             </div>
             <div className='flex flex-col w-[250px]'>
@@ -55,7 +66,6 @@ export default function MyForm() {
                 <input
                     id='name'
                     type="checkbox"
-                    value={name}
                 />
                 <label htmlFor='name'> Accommodation </label> 
             </div>
@@ -63,7 +73,6 @@ export default function MyForm() {
                 <input
                     id='name'
                     type="checkbox"
-                    value={name}
                 />
                 <label htmlFor='name'> Postnatal (AB) Care </label> 
             </div>
@@ -72,7 +81,6 @@ export default function MyForm() {
                 <input className='border border-black p-2 rounded-sm'
                     id='arrival-date'
                     type="date"
-                    value={name}
                 />
             </div>
             <div className='flex flex-col w-[250px]'>
@@ -89,10 +97,9 @@ export default function MyForm() {
                     
                 </textarea>
             </div>
-            <button className='mb-8 px-9 border w-[150px] h-[60px] bg-button text-white text-sm tracking-widest'>
+            <button type="button" onClick={submitHandler} className='mb-8 px-9 border w-[150px] h-[60px] bg-button text-white text-sm tracking-widest'>
                 SUBMIT
             </button>
-
 
         </form>
     )

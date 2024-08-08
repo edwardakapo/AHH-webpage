@@ -39,10 +39,11 @@ module.exports = {
       colors: {
         'button' : '#3B4323',
 				'logo' : "#3B4323" ,
-				'card' : {
+				cards : {
+          50 : '#dde3c9a4',
 					100 : '#DDE3C9',
 					200 : '#D6DEC2',
-					300 : '#A9BA78'
+					300 : '#A9BA78',
 				},
 				'footer' : '#555E3E',
         border: "hsl(var(--border))",
