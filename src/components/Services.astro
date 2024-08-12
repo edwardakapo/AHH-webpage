@@ -8,11 +8,13 @@ const SERVICES = [
     { title : "Documentation Assistance", text : ["Assistance with all Official Canadian Birth Documentation including, Birth registration, Certification and Canadian Passport Application.", "Nigerian Visa on Arrival for infants."]},
 
 ]
+import HorizontalLine from "./ui/HorizontalLine.astro"
 ---
 
 
 <section id="Services">
-    <div class="mx-auto w-fit flex flex-col items-center pb-10">
+    <HorizontalLine />
+    <div class="mx-auto w-fit flex mt-4 flex-col items-center pb-10">
         <h1 class="font-bold text-4xl w-fit pb-5">
             Anorak's Services
         </h1>
@@ -21,7 +23,7 @@ const SERVICES = [
         </p>
     </div>
     <div class="flex flex-col w-[90%] max-w-[900px] mx-auto">
-        <ServicesAccordion services={SERVICES} client:load/>
+        <ServicesAccordion services={SERVICES} client:visible/>
         <a href=#Contact class=" mt-10 max-w-[180px] mobile:max-w-[160px] text-center h-[58px] py-5 rounded-md text-[13px] tracking-widest bg-button text-white">
             LEARN MORE
         </a>

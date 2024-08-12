@@ -1,9 +1,14 @@
 ---
 import MemberCard from "./ui/MemberCard.astro"
 const IMAGE = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_A1InnmxTINILux32Jc07xhPQNfKwTsFmGg&s"
+import HorizontalLine from "./ui/HorizontalLine.astro"
 ---
 
 <section class="">
+    <span class="hidden mobile-md:block">
+
+        <HorizontalLine width="80px"/>
+    </span>
     <div class="max-w-[1200px] mobile-md:w-[90%] mobile-md:text-center  mx-auto mb-16">
         <h1 class="text-[40px] mobile-md:text-[36px] font-bold pb-3">
             Meet The Team
@@ -15,7 +20,7 @@ const IMAGE = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_A1InnmxTI
     <div class="flex max-w-[1050px] justify-between mx-auto mobile-md:flex-col mobile-md:w-fit gap-y-10">
         <MemberCard image={IMAGE} name="Ireti Adu" role="Owner" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."/>
         <MemberCard image={IMAGE} name="Taiye Adu" role="Expert" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."/>
-        <MemberCard image={IMAGE} name="Bukunmi Adu" role="Cook" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."/>
+        <MemberCard image={IMAGE} name="Bukunmi Odebumni" role="Expert" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."/>
 
     </div>
 </section>

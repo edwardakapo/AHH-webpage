@@ -1,4 +1,6 @@
 ---
+import GoogleAnalytics from '@/components/GoogleAnalytics.astro';
+
 interface Props {
 	title: string;
 }
@@ -10,14 +12,16 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Anorak Postnatal Care provides comprehensive support for new mothers and their babies, offering personalized care, mental health support, nutrition plans, and home services to ensure a smooth postpartum journey. Serving Guelph and surrounding areas with both in-home visits and homestay options." />
+		<meta name="keywords" content="Anorak Postnatal Care, postnatal care, postpartum support, mother and baby care, mental health support, nutrition plans, home support services, postnatal home visits, homestay for new mothers, Guelph postnatal care, postpartum recovery, maternal health, newborn care, fourth trimester support, postpartum services, Toronto postnatal care, Mississauga postnatal care, Scarborough postnatal care, Kitchener postnatal care, Waterloo postnatal care, Hamilton postnatal care, Cambridge postnatal care, London ON postnatal care" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<meta name="google-site-verification" content="eSv6jDh5Yq4g4wQYVdMdwVXFrMms-id8zfTrIq0vTEg" />
 		<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-
+		<GoogleAnalytics />
 		<!-- favicon links -->
 		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png" />

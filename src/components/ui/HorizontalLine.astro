@@ -1,0 +1,8 @@
+---
+const { width } = Astro.props; // Destructure the width prop
+const lineWidth = width ? width : "100px"; // Set default width to 50px if width is not defined
+---
+
+<div style={{ width : lineWidth}} class="horizontal-line h-1 border-b-[3px] mx-auto my-5 mobile-md:my-2 border-button">
+    <!-- Content can go here if needed -->
+</div>

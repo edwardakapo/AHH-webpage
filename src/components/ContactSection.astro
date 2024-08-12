@@ -1,4 +1,5 @@
 ---
+import HorizontalLine from "./ui/HorizontalLine.astro";
 import { WhatsappIcon , PhoneIcon , EmailIcon, ArrowIcon } from "./ui/svgs";
 const style = { 
     width : '30px', height : '30px'
@@ -12,6 +13,10 @@ import MyForm from "@/components/ui/ContactForm"
     <MyForm  client:visible/>
 </div> -->
 <section id="Contact" class="mx-auto flex justify-between mobile-md:w-[90%] tb-max:block desktop:w-[1000px] laptop-md:w-[1000px]">
+    <span class="hidden mobile-md:block">
+
+        <HorizontalLine width="80px"/>
+    </span>
         <div class="flex flex-col justify-center tb-max:items-center">
             <div class="max-w-[500px] mb-10">
                 <h1 class="text-[40px] mobile-md:text-[36px] font-bold tb-max:text-center pb-3">
@@ -28,8 +33,8 @@ import MyForm from "@/components/ui/ContactForm"
                         <ArrowIcon style={{width : "24px", height : "24px"}}/>
                     </div>
                 </button>
-                <div id="Form-container" class="mb-5 h-0 ease-in-out duration-500 overflow-hidden">
-                    <MyForm client:visible/>
+                <div id="Form-container" class="mb-5 h-0 border-y-2 ease-in-out duration-500 overflow-hidden">
+                    <!-- <MyForm client:visible/> -->
                 </div>
             <div class="hidden tb-max:block w-[320px] mx-auto">
                 <h3 class="text-center font-bold text-xl">
