@@ -54,6 +54,15 @@ const { title } = Astro.props;
         --text-color: #fff;
     }
 
+	section {
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease-in; /* Transition effect */
+	}
+
+	section.visible {
+		opacity: 1; /* Fully visible */
+	}
+
     body {
         color: var(--text-color);
 		transition: color 0.3s ease; /* Smooth transition for text color */
@@ -66,4 +75,38 @@ const { title } = Astro.props;
 		scroll-padding-top: 80px; 
 
 	}
+
+	/* Reset default styling for date input */
+input[type="date"] {
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    -moz-appearance: textfield; /* Remove default styling in Firefox */
+    appearance: none; /* Remove default styling in modern browsers */
+    background: none; /* Remove background */
+    font: inherit; /* Inherit font styles */
+}
 </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll('section');
+
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Add visible class
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section); // Observe each section
+    });
+});
+</script>
