@@ -54,12 +54,12 @@ const { title } = Astro.props;
         --text-color: #fff;
     }
 
-	section {
+	.section {
     opacity: 0; /* Start hidden */
-    transition: opacity 0.5s ease-in; /* Transition effect */
+    transition: opacity 0.6s ease-in; /* Transition effect */
 	}
 
-	section.visible {
+	.section.visible {
 		opacity: 1; /* Fully visible */
 	}
 
@@ -85,26 +85,11 @@ input[type="date"] {
 	height: 100%;
     font: inherit; /* Inherit font styles */
 }
-
-button,
-		input[type="button"],
-		input[type="submit"],
-		input[type="reset"] {
-			-webkit-appearance: none; /* Remove default WebKit styles */
-			-moz-appearance: none;    /* Remove default Mozilla styles */
-			appearance: none;         /* Remove default styles for other browsers */
-			background: none;         /* Remove default background */
-			color: white;           /* Inherit text color from parent element */
-			font: inherit;            /* Inherit font from parent element */
-			padding: 8px;               /* Remove default padding */
-			margin: 0;                /* Remove default margin */
-			cursor: pointer;          /* Set cursor to pointer */
-		}
 </style>
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('.section');
 
     const options = {
         root: null, // Use the viewport as the root
