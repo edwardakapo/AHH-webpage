@@ -125,13 +125,14 @@ export default function MyForm() {
             </div>
             <div className='flex flex-col w-[250px]'>
                 <label className="w-fit mb-3" htmlFor='EDD'> Expected Delivery Date </label> 
-                <input className='border border-black p-2 rounded-sm'
+                <input className='border border-black rounded-sm'
                     id='EDD'
                     type="date"
                     name='expectedDeliveryDate'
                     required
                     value={formData.expectedDeliveryDate}
                     onChange={handleChange}
+                    placeholder='enter the date of delivery'
 
                 />
             </div>
@@ -173,7 +174,7 @@ export default function MyForm() {
 
                 <div className='flex flex-col w-[250px]'>
                     <label className="w-fit mb-3" htmlFor='arrival-date'> Date of Arrival </label> 
-                    <input className='border border-black p-2 rounded-sm'
+                    <input className='border border-black rounded-sm'
                         id='arrival-date'
                         type="date"
                         name='arrivalDate'
